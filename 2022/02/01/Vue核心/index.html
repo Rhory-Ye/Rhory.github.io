@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html  lang="en" >
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <title>Vue核心 | 叶仁勇的博客</title>
+    <meta name="description" content="Vue的特点   采用MVVM模式   采用组件化模式，提高代码复用率、且让代码更好维护   声明式编码，让编码人员无需直接操作DOM，提高开发效率     Vue的基本工作原理    创建Vue实例，且要传入一个配置对象     容器中的代码依然符合html规范，只不过混入了Vue的语法     容器里的代码被称为Vue模板     Vue实例和容器是一一对应的     真实开发中只会有一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue核心">
+<meta property="og:url" content="http://yerenyong.com.cn/2022/02/01/Vue%E6%A0%B8%E5%BF%83/index.html">
+<meta property="og:site_name" content="叶仁勇的博客">
+<meta property="og:description" content="Vue的特点   采用MVVM模式   采用组件化模式，提高代码复用率、且让代码更好维护   声明式编码，让编码人员无需直接操作DOM，提高开发效率     Vue的基本工作原理    创建Vue实例，且要传入一个配置对象     容器中的代码依然符合html规范，只不过混入了Vue的语法     容器里的代码被称为Vue模板     Vue实例和容器是一一对应的     真实开发中只会有一个">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-01T07:13:16.000Z">
+<meta property="article:modified_time" content="2022-05-21T13:51:08.863Z">
+<meta property="article:author" content="Rhory Ye">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+
+    
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    
+<link rel="stylesheet" href="/css/common.min.css">
+
+
+
+    
+    
+    
+    
+        <link href="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/css/lightgallery.min.css" rel="stylesheet">
+    
+    
+    
+<link rel="stylesheet" href="/css/iconfont.min.css">
+
+    
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+    <body>
+        <header class="header header-fixture">
+    <div class="profile-search-wrap flex sm:block">
+        
+        
+        <div class="profile sm:text-center md:px-1 lg:px-3 sm:pb-4 sm:pt-6">
+            <a id="avatar" role="link" href="https://github.com/Rhory-Ye" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_blank" rel="noopener" rel="noreferrer" >
+                <img src="/images/avatar.jpg" class="rounded-full" alt="avatar">
+            </a>
+            <h2 id="name" class="hidden lg:block">叶仁勇</h2>
+            <h3 id="title" class="hidden lg:block"></h3>
+            
+            <small id="location" class="hidden lg:block">
+                <i class="iconfont icon-map-icon"></i>
+                Putian , Fujian
+            </small>
+            
+        </div>
+        
+        
+<div class="search flex-1 flex lg:inline-block sm:hidden lg:px-4 lg:mt-2 lg:mb-4 lg:w-full">
+    <form id="search-form" class="my-auto flex-1 lg:border lg:border-solid lg:border-gray-200">
+        <div class="input-group table bg-gray-100 lg:bg-white w-full">
+            <input id="search-input" type="text" placeholder="Search" class="inline-block w-full bg-gray-100 lg:bg-white p-1">
+            <span class="table-cell">
+                <button name="search tigger button" disabled>
+                    <i class="iconfont icon-search m-2"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+        
+<div id="content-json" data-placeholder="Search" class="invisible hidden">/content.json</div>
+<script id="search-teamplate" type="text/html" data-path="/content.json">
+    <div>
+        <div class="search-header bg-gray-400">
+            <input id="actual-search-input" model="keyword" ref="input" class="inline-block w-full h-10 px-2 py-1" placeholder="Search" type="text">
+        </div>
+        <div class="search-result bg-gray-200">
+            {{#each searchPosts}}
+            <a href="/{{ path }}" class="result-item block px-2 pb-3 mb-1 pt-1 hover:bg-indigo-100">
+                <i class="iconfont icon-file"></i>
+                <h1 class="result-title inline font-medium text-lg">{{ title }}</h1>
+                <p class="result-content text-gray-600 text-sm">{{{ text }}}</p>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</script>
+
+</div>
+
+
+        <button name="menu toogle button" id="menu-toggle-btn" class="block sm:hidden p-3" role="button" aria-expanded="false">
+            <i class="iconfont icon-hamburger"></i>
+        </button>
+    </div>
+    <nav id="menu-nav" class="hidden sm:flex flex-col">
+        
+        
+            <div class="menu-item menu-home" role="menuitem">
+                <a href="/.">
+                    <i class="iconfont icon-home" aria-hidden="true"></i>
+                    <span class="menu-title">Home</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-archives" role="menuitem">
+                <a href="/archives">
+                    <i class="iconfont icon-archive" aria-hidden="true"></i>
+                    <span class="menu-title">Archives</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-categories" role="menuitem">
+                <a href="/categories">
+                    <i class="iconfont icon-folder" aria-hidden="true"></i>
+                    <span class="menu-title">Categories</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-tags" role="menuitem">
+                <a href="/tags">
+                    <i class="iconfont icon-tag" aria-hidden="true"></i>
+                    <span class="menu-title">Tags</span>
+                </a>
+            </div>
+        
+        
+<div class="social-links flex sm:flex-col lg:hidden mt-5">
+    
+        <span class="social-item text-center">
+            <a target="_blank" rel="noopener" href="https://github.com/Rhory-Ye">
+                <i class="iconfont social-icon icon-github"></i>
+                <span class="menu-title hidden lg:inline">menu.github</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/null">
+                <i class="iconfont social-icon icon-telegram"></i>
+                <span class="menu-title hidden lg:inline">menu.telegram</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/null">
+                <i class="iconfont social-icon icon-twitter"></i>
+                <span class="menu-title hidden lg:inline">menu.twitter</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/atom.xml">
+                <i class="iconfont social-icon icon-rss"></i>
+                <span class="menu-title hidden lg:inline">menu.rss</span>
+            </a>
+        </span>
+    
+</div>
+
+
+    </nav>
+</header>
+
+        <section class="main-section">
+            
+    <main class="flex-1 px-4 py-14 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    
+
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            
+    
+        <h1 class="article-title text-lg" itemprop="name">
+            Vue核心
+        </h1>
+    
+
+
+
+            <p class="article-meta mb-3 text-xs">
+                <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2022/02/01/Vue%E6%A0%B8%E5%BF%83/" class="article-date">
+	  <time datetime="2022-02-01T07:13:16.000Z" itemprop="datePublished">Feb 1</time>
+	</a>
+</span>
+
+                
+
+                
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/Vue/" rel="tag">Vue</a>
+  </span>
+
+
+                <span class="_partial/post-comment"><i class="icon icon-comment"></i>
+                    <a href="/2022/02/01/Vue%E6%A0%B8%E5%BF%83/#comments" class="article-comment-link">
+                        Comments
+                    </a>
+                </span>
+                
+
+            </p>
+        </header>
+        <div class="marked-body article-body">
+            <ul>
+<li>
+<p>Vue的特点</p>
+<ul>
+<li>
+<p>采用MVVM模式</p>
+</li>
+<li>
+<p>采用组件化模式，提高代码复用率、且让代码更好维护</p>
+</li>
+<li>
+<p>声明式编码，让编码人员无需直接操作DOM，提高开发效率</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Vue的基本工作原理</p>
+<ul>
+<li>
+<ol>
+<li>创建Vue实例，且要传入一个配置对象</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>容器中的代码依然符合html规范，只不过混入了Vue的语法</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>容器里的代码被称为Vue模板</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Vue实例和容器是一一对应的</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>真实开发中只会有一个Vue实例，并且会配合着组件一起使用</li>
+</ol>
+</li>
+<li>
+<p>6.中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性</p>
+</li>
+<li>
+<ol start="7">
+<li>一旦data中的数据发生改变，那么模板中用到数据的地方也会发生改变</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>Vue的模板语法</p>
+<ul>
+<li>
+<ol>
+<li>插值语法</li>
+</ol>
+<ul>
+<li>
+<p>功能：用于解析标签体内容</p>
+</li>
+<li>
+<p>写法：，xxx是js表达式，且xx可以自动读取到data中的所有属性</p>
+</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>指令语法</li>
+</ol>
+<ul>
+<li>
+<p>功能：用于解析标签（包括：标签属性、标签体内容、绑定事件……）</p>
+</li>
+<li>
+<p>比如：v-bind</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Vue的数据绑定方式</p>
+<ul>
+<li>
+<p>单向绑定（v-bind）：数据只能从data流向页面</p>
+</li>
+<li>
+<p>双向绑定（v-model）：数据能在data和页面中双向流动</p>
+<ul>
+<li>
+<p>双向绑定一般都应用在表单类元素上；</p>
+</li>
+<li>
+<p>v-model默认收集value的值，因此v-model:value可以写成v-model</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>data与el的两种写法</p>
+<ul>
+<li>
+<p>el的两种写法</p>
+<ul>
+<li>
+<p>（1）.new Vue实例的时候配置el属性</p>
+</li>
+<li>
+<p>（2）先创建Vue实例，随后通过vm.$mount(‘#root’)指定el的值</p>
+</li>
+</ul>
+</li>
+<li>
+<p>data的两种写法</p>
+<ul>
+<li>
+<p>（1）对象式</p>
+</li>
+<li>
+<p>（2）函数式</p>
+</li>
+</ul>
+</li>
+<li>
+<p>一个重要的原则：由Vue管理的函数，一定不要写箭头函数，一旦写了箭头函数，this就不再是Vue实例了</p>
+</li>
+</ul>
+</li>
+<li>
+<p>MVVM模型</p>
+<ul>
+<li>
+<p>M：模型——对应data中的数据</p>
+</li>
+<li>
+<p>V：视图——模板</p>
+</li>
+<li>
+<p>VM：视图模型——Vue实例对象</p>
+</li>
+<li>
+<p>注：</p>
+<ul>
+<li>
+<p>data中所有属性都会出现在VM中</p>
+</li>
+<li>
+<p>VM中的所有属性都可以当做Vue模板使用</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>数据代理</p>
+<ul>
+<li>
+<p>定义：通过一个对象代理对另一个对象中的属性的操作</p>
+</li>
+<li>
+<p>Vue中的数据代理：通过vm对象来代理data对象中属性的操作</p>
+</li>
+<li>
+<p>Vue中数据代理的好处：更加方便的操作data中的数据</p>
+</li>
+<li>
+<p>基本原理：</p>
+<ul>
+<li>
+<p>通过Object.defineProperty()把data对象中的所有属性添加到vm上</p>
+</li>
+<li>
+<p>为每一个添加到vm上的属性都指定一个getter和setter</p>
+</li>
+<li>
+<p>通过getter和setter内部去操作data中对应的属性</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>事件处理</p>
+<ul>
+<li>
+<p>事件的基本使用</p>
+<ul>
+<li>
+<ol>
+<li>使用v-on:xxx 或 @xxx绑定事件，其中xxx是事件名</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>事件的回调需要配置在methods对象中，最终会在vm上</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>methods中配置的函数不要用箭头函数，否则this就不是vm了</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>methods中配置的函数都是被Vue所管理的函数，this指向vm或 组件实例对象</li>
+</ol>
+</li>
+<li>
+<p>5.@click=&quot;demo&quot;和@click=&quot;demo($event)&quot;效果一致，但后者可以传参</p>
+</li>
+</ul>
+</li>
+<li>
+<p>事件修饰符</p>
+<ul>
+<li>
+<p>prevent：阻止默认事件发生（常用）</p>
+</li>
+<li>
+<p>stop：阻止事件冒泡（常用）</p>
+</li>
+<li>
+<p>once：事件只触发一次（常用）</p>
+</li>
+<li>
+<p>capture：使用事件的捕获模式（捕获是从外到里，冒泡是从里到外）</p>
+</li>
+<li>
+<p>self：只有event.target是当前操作的元素才触发事件</p>
+</li>
+<li>
+<p>passive：事件的默认行为立即执行，无需等待事件回调执行完毕</p>
+</li>
+<li>
+<p>注：修饰符可以连续写</p>
+</li>
+</ul>
+</li>
+<li>
+<p>键盘事件</p>
+<ul>
+<li>
+<ol>
+<li>Vue中常见的按键别名</li>
+</ol>
+<ul>
+<li>
+<p>回车：enter</p>
+</li>
+<li>
+<p>删除：delete（退格和删除）</p>
+</li>
+<li>
+<p>退出：esc</p>
+</li>
+<li>
+<p>空格：space</p>
+</li>
+<li>
+<p>换行：tab（特殊：必须配合keydown使用）</p>
+</li>
+<li>
+<p>上：up</p>
+</li>
+<li>
+<p>下：down</p>
+</li>
+<li>
+<p>左：left</p>
+</li>
+<li>
+<p>右：right</p>
+</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>Vue未提供别名的按键，可以使用按键原始的key值去绑定，但注意要转为kebab-case（短横线命名）</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>系统修饰键：ctrl、alt、shift、meta（win键）</li>
+</ol>
+<ul>
+<li>
+<p>（1）配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发</p>
+</li>
+<li>
+<p>（2）配合keydown使用：正常触发事件</p>
+</li>
+<li>
+<p>注：@keyup.ctrl.y=&quot;&quot;可以指定固定组合键时才生效</p>
+</li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li>使用keycode指定具体的按键（不推荐，是一种已废弃的标准）</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Vue.config.keyCodes.自定义键名 = 键码，可以定制按键别名</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>计算属性与监视</p>
+<ul>
+<li>
+<p>计算属性</p>
+<ul>
+<li>
+<ol>
+<li>定义：要用的属性不存在，要通过已有属性计算得来</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>原理：底层借助了Object.defineProperty()方法提供的getter和setter</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>get函数什么时候执行</li>
+</ol>
+<ul>
+<li>
+<p>（1）初次读取fullName的值时</p>
+</li>
+<li>
+<p>（2）所依赖的数据发生变化时</p>
+</li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li>优势：与methods实现相比，内部有缓存机制（复用），效率更高，调试更方便</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>注：</li>
+</ol>
+<ul>
+<li>
+<p>计算属性最终会出现在vm上，直接读取使用即可</p>
+</li>
+<li>
+<p>如果计算属性要被修改，那必须写set函数去响应修改，且set中药引起计算时依赖的数据发生改变</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+<blockquote class="copyright">
+    <p><strong>Link to this article : </strong><a class="permalink" href="http://yerenyong.com.cn/2022/02/01/Vue%E6%A0%B8%E5%BF%83/">http://yerenyong.com.cn/2022/02/01/Vue核心/</a></p>
+    <p><strong>This article is available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> License</strong></p>
+</blockquote>
+
+
+    </article>
+    
+    <section id="comments">
+        
+    </section>
+
+
+    
+
+</main>
+
+
+<aside style="" id="sidebar" class="aside aside-fixture">
+    <div class="toc-sidebar">
+        <nav id="toc" class="article-toc">
+            <h3 class="toc-title">Catalogue</h3>
+            
+        </nav>
+    </div>
+</aside>
+
+
+
+
+
+        </section>
+        <footer class="hidden lg:block fixed bottom-0 left-0 sm:w-1/12 lg:w-1/6 bg-gray-100 z-40">
+    
+    <div class="footer-social-links">
+        
+            <a target="_blank" rel="noopener" href="https://github.com/Rhory-Ye">
+                <i class="iconfont icon-github"></i>
+            </a>
+        
+            <a href="/null">
+                <i class="iconfont icon-telegram"></i>
+            </a>
+        
+            <a href="/null">
+                <i class="iconfont icon-twitter"></i>
+            </a>
+        
+            <a href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
+            </a>
+        
+    </div>
+    
+    
+</footer>
+
+        <div id="mask" class="hidden mask fixed inset-0 bg-gray-900 opacity-75 z-40"></div>
+        <div id="search-view-container" class="hidden shadow-xl"></div>
+        
+<script src="/js/dom-event.min.js"></script>
+
+
+
+<script src="/js/local-search.min.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/js/lightgallery.min.js"></script>
+    
+<script src="/js/light-gallery.min.js"></script>
+
+
+
+
+
+
+    </body>
+</html>

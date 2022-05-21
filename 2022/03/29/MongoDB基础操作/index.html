@@ -3,17 +3,18 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-    <title>Hello World | 叶仁勇的博客</title>
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <title>Mongo DB基础操作 | 叶仁勇的博客</title>
+    <meta name="description" content="三个基础概念   数据库 Database  数据库是一个仓库，仓库中可以存放集合    集合 Collection  集合类似于数组，在集合中可以存放文档    文档 Document   文档数据库中的最小单位，我们存储和操作的内容都是文档   在Mongo DB中，数据库和集合都不需要手动创建  在我们创建文档时，如果文档所在的集合或数据库不存在会自动创建数据库和集合      常用指令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yerenyong.com.cn/2022/05/19/hello-world/index.html">
+<meta property="og:title" content="Mongo DB基础操作">
+<meta property="og:url" content="http://yerenyong.com.cn/2022/03/29/MongoDB%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="叶仁勇的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="三个基础概念   数据库 Database  数据库是一个仓库，仓库中可以存放集合    集合 Collection  集合类似于数组，在集合中可以存放文档    文档 Document   文档数据库中的最小单位，我们存储和操作的内容都是文档   在Mongo DB中，数据库和集合都不需要手动创建  在我们创建文档时，如果文档所在的集合或数据库不存在会自动创建数据库和集合      常用指令">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-19T14:02:51.918Z">
-<meta property="article:modified_time" content="2022-05-19T14:02:51.918Z">
+<meta property="article:published_time" content="2022-03-29T13:16:29.000Z">
+<meta property="article:modified_time" content="2022-05-21T13:42:39.044Z">
 <meta property="article:author" content="Rhory Ye">
+<meta property="article:tag" content="Mongo DB">
 <meta name="twitter:card" content="summary">
 
     
@@ -175,7 +176,7 @@
             
     
         <h1 class="article-title text-lg" itemprop="name">
-            Hello World
+            Mongo DB基础操作
         </h1>
     
 
@@ -184,17 +185,22 @@
             <p class="article-meta mb-3 text-xs">
                 <span class="article-date">
     <i class="iconfont icon-calendar-check"></i>
-	<a href="/2022/05/19/hello-world/" class="article-date">
-	  <time datetime="2022-05-19T14:02:51.918Z" itemprop="datePublished">May 19</time>
+	<a href="/2022/03/29/MongoDB%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="article-date">
+	  <time datetime="2022-03-29T13:16:29.000Z" itemprop="datePublished">Mar 29</time>
 	</a>
 </span>
 
                 
 
                 
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/Mongo-DB/" rel="tag">Mongo DB</a>
+  </span>
+
 
                 <span class="_partial/post-comment"><i class="icon icon-comment"></i>
-                    <a href="/2022/05/19/hello-world/#comments" class="article-comment-link">
+                    <a href="/2022/03/29/MongoDB%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/#comments" class="article-comment-link">
                         Comments
                     </a>
                 </span>
@@ -203,25 +209,145 @@
             </p>
         </header>
         <div class="marked-body article-body">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <h2 id="三个基础概念">三个基础概念</h2>
+<ul>
+<li>
+<p>数据库 Database</p>
+<ul>
+<li>数据库是一个仓库，仓库中可以存放集合</li>
+</ul>
+</li>
+<li>
+<p>集合 Collection</p>
+<ul>
+<li>集合类似于数组，在集合中可以存放文档</li>
+</ul>
+</li>
+<li>
+<p>文档 Document</p>
+<ul>
+<li>
+<p>文档数据库中的最小单位，我们存储和操作的内容都是文档</p>
+</li>
+<li>
+<p>在Mongo DB中，数据库和集合都不需要手动创建</p>
+<ul>
+<li>在我们创建文档时，如果文档所在的集合或数据库不存在会自动创建数据库和集合</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用指令">常用指令</h2>
+<ul>
+<li>
+<p>基本指令</p>
+<ul>
+<li>
+<p>显示当前所有数据库：<code>show dbs</code></p>
+</li>
+<li>
+<p>进入到指定数据库中：use 数据库名</p>
+</li>
+<li>
+<p>显示当前所处的数据库：<code>db</code></p>
+</li>
+<li>
+<p>显示数据库中所有的集合：show collections</p>
+</li>
+</ul>
+</li>
+<li>
+<p>数据库的CRUD</p>
+<ul>
+<li>
+<p>向数据库中插入文档：<code>db.&lt;collection&gt;.insert(doc)</code></p>
+<ul>
+<li>
+<p>可以插入一个或多个文档，插入多个文档要以数组的形式插入</p>
+</li>
+<li>
+<p>当向集合中插入文档时，如果没有给文档指定_id属性，数据库会自动为文档添加该属性，以作为文档的唯一标识<br>
+该表示根据时间戳和机器码，基本上不会重复，可以调用ObjectId()手动生成一个标识</p>
+</li>
+<li>
+<p>_id属性也可以自己添加，但需要确保它的唯一性</p>
+</li>
+<li>
+<p><code>db.&lt;collection&gt;.insertOne()</code>和<code>db.&lt;collection&gt;.insertMany()</code>，语义更清晰</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>查询当前集合中的所有文档：<code>db.&lt;collection&gt;.find(query)</code></p>
+<ul>
+<li>
+<p>注意：该方法返回的是一个数组</p>
+</li>
+<li>
+<p><code>db.&lt;collection&gt;.findOne()</code>：用来查询符合条件的第一个文档</p>
+</li>
+<li>
+<p><code>db.&lt;collection&gt;.find(&#123;&#125;).count()</code>：查询所有结果的数量</p>
+</li>
+<li>
+<p>修改文档：<code>db.collection.update</code>(查询条件，新对象)</p>
+<ul>
+<li>
+<p>注1：该方法默认情况下回使用新对象来替换旧的对象</p>
+</li>
+<li>
+<p>注2：update默认只修改一个，update可以修改多个</p>
+</li>
+<li>
+<p>如果要修改指定的属性，而不是替换，需要使用“修改操作符”来完成修改</p>
+<ul>
+<li>
+<p>$set：用于修改文档中的指定属性</p>
+</li>
+<li>
+<p>$unset：用来删除文档的指定属性</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>db.collection.updateOne()</code>和<code>db.collection.updateMany()</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>删除文档：<code>db.collection.remove()</code></p>
+<ul>
+<li>默认删除符合条件的所有文档，可以传参数true，则只删除一个
+<ul>
+<li><code>db.collection.deleteOne()</code>和<code>db.collection.deleteMany()</code></li>
+</ul>
+</li>
+<li><code>db.collection.remove(&#123;&#125;)</code>：清空集合（性能略差）
+<ul>
+<li>清空集合：<code>db.collection.drop()</code></li>
+</ul>
+</li>
+<li>删除数据库：<code>db.dropDatabase()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li>配置默认数据库命令：<code>mongod --dbpath 路径 --port 端口号</code></li>
+<li>默认端口：27017</li>
+<li>启动服务：mongod</li>
+<li>连接服务：mongo</li>
+</ul>
 
         </div>
         
 <blockquote class="copyright">
-    <p><strong>Link to this article : </strong><a class="permalink" href="http://yerenyong.com.cn/2022/05/19/hello-world/">http://yerenyong.com.cn/2022/05/19/hello-world/</a></p>
+    <p><strong>Link to this article : </strong><a class="permalink" href="http://yerenyong.com.cn/2022/03/29/MongoDB%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">http://yerenyong.com.cn/2022/03/29/MongoDB基础操作/</a></p>
     <p><strong>This article is available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> License</strong></p>
 </blockquote>
 
@@ -242,7 +368,7 @@
     <div class="toc-sidebar">
         <nav id="toc" class="article-toc">
             <h3 class="toc-title">Catalogue</h3>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">三个基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a></li></ol>
         </nav>
     </div>
 </aside>

@@ -3,18 +3,18 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-    <title>Mongo DB基础操作 | 叶仁勇的博客</title>
-    <meta name="description" content="三个基础概念   数据库 Database  数据库是一个仓库，仓库中可以存放集合    集合 Collection  集合类似于数组，在集合中可以存放文档    文档 Document   文档数据库中的最小单位，我们存储和操作的内容都是文档   在Mongo DB中，数据库和集合都不需要手动创建  在我们创建文档时，如果文档所在的集合或数据库不存在会自动创建数据库和集合      常用指令">
+    <title>Docker基础操作 | 叶仁勇的博客</title>
+    <meta name="description" content="Docker安装Mysql 1.docker安装mysql：sudo docker pull mysql:5.7 2.docker进行mysql文件挂载和配置 123456docker run -p 3306:3306 --name mysql \-v &#x2F;mydata&#x2F;mysql&#x2F;log:&#x2F;var&#x2F;log&#x2F;mysql \-v &#x2F;mydata&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql \-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mongo DB基础操作">
-<meta property="og:url" content="http://yerenyong.com.cn/2022/03/29/test-article%20-%20%E5%89%AF%E6%9C%AC/index.html">
+<meta property="og:title" content="Docker基础操作">
+<meta property="og:url" content="http://yerenyong.com.cn/2022/01/19/Docker%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="叶仁勇的博客">
-<meta property="og:description" content="三个基础概念   数据库 Database  数据库是一个仓库，仓库中可以存放集合    集合 Collection  集合类似于数组，在集合中可以存放文档    文档 Document   文档数据库中的最小单位，我们存储和操作的内容都是文档   在Mongo DB中，数据库和集合都不需要手动创建  在我们创建文档时，如果文档所在的集合或数据库不存在会自动创建数据库和集合      常用指令">
+<meta property="og:description" content="Docker安装Mysql 1.docker安装mysql：sudo docker pull mysql:5.7 2.docker进行mysql文件挂载和配置 123456docker run -p 3306:3306 --name mysql \-v &#x2F;mydata&#x2F;mysql&#x2F;log:&#x2F;var&#x2F;log&#x2F;mysql \-v &#x2F;mydata&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql \-">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-29T13:16:29.000Z">
-<meta property="article:modified_time" content="2022-05-21T09:19:00.590Z">
+<meta property="article:published_time" content="2022-01-19T12:16:28.000Z">
+<meta property="article:modified_time" content="2022-05-21T13:52:55.949Z">
 <meta property="article:author" content="Rhory Ye">
-<meta property="article:tag" content="Mongo DB">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
 
     
@@ -176,7 +176,7 @@
             
     
         <h1 class="article-title text-lg" itemprop="name">
-            Mongo DB基础操作
+            Docker基础操作
         </h1>
     
 
@@ -185,8 +185,8 @@
             <p class="article-meta mb-3 text-xs">
                 <span class="article-date">
     <i class="iconfont icon-calendar-check"></i>
-	<a href="/2022/03/29/test-article%20-%20%E5%89%AF%E6%9C%AC/" class="article-date">
-	  <time datetime="2022-03-29T13:16:29.000Z" itemprop="datePublished">Mar 29</time>
+	<a href="/2022/01/19/Docker%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="article-date">
+	  <time datetime="2022-01-19T12:16:28.000Z" itemprop="datePublished">Jan 19</time>
 	</a>
 </span>
 
@@ -195,12 +195,12 @@
                 
     <span class="article-tags">
     <i class="iconfont icon-tag"></i>
-    <a class="article-tag-none-link" href="/tags/Mongo-DB/" rel="tag">Mongo DB</a>
+    <a class="article-tag-none-link" href="/tags/Docker/" rel="tag">Docker</a>
   </span>
 
 
                 <span class="_partial/post-comment"><i class="icon icon-comment"></i>
-                    <a href="/2022/03/29/test-article%20-%20%E5%89%AF%E6%9C%AC/#comments" class="article-comment-link">
+                    <a href="/2022/01/19/Docker%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/#comments" class="article-comment-link">
                         Comments
                     </a>
                 </span>
@@ -209,154 +209,29 @@
             </p>
         </header>
         <div class="marked-body article-body">
-            <h2 id="三个基础概念">三个基础概念</h2>
-<ul>
-<li>
-<p>数据库 Database</p>
-<ul>
-<li>数据库是一个仓库，仓库中可以存放集合</li>
-</ul>
-</li>
-<li>
-<p>集合 Collection</p>
-<ul>
-<li>集合类似于数组，在集合中可以存放文档</li>
-</ul>
-</li>
-<li>
-<p>文档 Document</p>
-<ul>
-<li>
-<p>文档数据库中的最小单位，我们存储和操作的内容都是文档</p>
-</li>
-<li>
-<p>在Mongo DB中，数据库和集合都不需要手动创建</p>
-<ul>
-<li>在我们创建文档时，如果文档所在的集合或数据库不存在会自动创建数据库和集合</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="常用指令">常用指令</h2>
-<ul>
-<li>
-<p>基本指令</p>
-<ul>
-<li>
-<p>显示当前所有数据库：<code>show dbs</code></p>
-</li>
-<li>
-<p>进入到指定数据库中：use 数据库名</p>
-</li>
-<li>
-<p>显示当前所处的数据库：<code>db</code></p>
-</li>
-<li>
-<p>显示数据库中所有的集合：show collections</p>
-</li>
-</ul>
-</li>
-<li>
-<p>数据库的CRUD</p>
-<ul>
-<li>
-<p>向数据库中插入文档：<code>db.&lt;collection&gt;.insert(doc)</code></p>
-<ul>
-<li>
-<p>可以插入一个或多个文档，插入多个文档要以数组的形式插入</p>
-</li>
-<li>
-<p>当向集合中插入文档时，如果没有给文档指定_id属性，数据库会自动为文档添加该属性，以作为文档的唯一标识<br>
-该表示根据时间戳和机器码，基本上不会重复，可以调用ObjectId()手动生成一个标识</p>
-</li>
-<li>
-<p>_id属性也可以自己添加，但需要确保它的唯一性</p>
-</li>
-<li>
-<p><code>db.&lt;collection&gt;.insertOne()</code>和<code>db.&lt;collection&gt;.insertMany()</code>，语义更清晰</p>
-</li>
-</ul>
-</li>
-<li>
-<p>查询当前集合中的所有文档：<code>db.&lt;collection&gt;.find(query)</code></p>
-<ul>
-<li>
-<p>注意：该方法返回的是一个数组</p>
-</li>
-<li>
-<p><code>db.&lt;collection&gt;.findOne()</code>：用来查询符合条件的第一个文档</p>
-</li>
-<li>
-<p><code>db.&lt;collection&gt;.find(&#123;&#125;).count()</code>：查询所有结果的数量</p>
-</li>
-</ul>
-</li>
-<li>
-<p>修改文档：<code>db.collection.update</code>(查询条件，新对象)</p>
-<ul>
-<li>
-<p>注1：该方法默认情况下回使用新对象来替换旧的对象</p>
-</li>
-<li>
-<p>注2：update默认只修改一个，update可以修改多个</p>
-</li>
-<li>
-<p>如果要修改指定的属性，而不是替换，需要使用“修改操作符”来完成修改</p>
-<ul>
-<li>
-<p>$set：用于修改文档中的指定属性</p>
-</li>
-<li>
-<p>$unset：用来删除文档的指定属性</p>
-</li>
-</ul>
-</li>
-<li>
-<p><code>db.collection.updateOne()</code>和<code>db.collection.updateMany()</code></p>
-</li>
-</ul>
-</li>
-<li>
-<p>删除文档：<code>db.collection.remove()</code></p>
-<ul>
-<li>
-<p>默认删除符合条件的所有文档，可以传参数true，则只删除一个</p>
-</li>
-<li>
-<p><code>db.collection.deleteOne()</code>和<code>db.collection.deleteMany()</code></p>
-</li>
-<li>
-<p><code>db.collection.remove(&#123;&#125;)</code>：清空集合（性能略差）</p>
-</li>
-<li>
-<p>清空集合：<code>db.collection.drop()</code></p>
-</li>
-<li>
-<p>删除数据库：<code>db.dropDatabase()</code></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>配置默认数据库命令：<code>mongod --dbpath 路径 --port 端口号</code></p>
-</li>
-<li>
-<p>默认端口：27017</p>
-</li>
-<li>
-<p>启动服务：mongod</p>
-</li>
-<li>
-<p>连接服务：mongo</p>
-</li>
-</ul>
+            <h2 id="Docker安装Mysql">Docker安装Mysql</h2>
+<p>1.docker安装mysql：<code>sudo docker pull mysql:5.7</code></p>
+<p>2.docker进行mysql文件挂载和配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql \</span><br><span class="line">-v /mydata/mysql/log:/var/log/mysql \</span><br><span class="line">-v /mydata/mysql/data:/var/lib/mysql \</span><br><span class="line">-v /mydata/mysql/conf:/etc/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=root \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
+<p>参数说明：<br>
+<code>--name</code> 指定容器名字<br>
+<code>-p 3306:3306</code> 是将容器的3306端口映射到主机的3306端口<br>
+<code>-v </code> 是将对应的配置、数据、日志文件夹挂载到Linux主机上。<br>
+<code>-e</code> 是配置mysql相关参数的，<code>MYSQL_ROOT_PASSWORD</code>初始化mysql root用户的密码。</p>
+<p>修改mysql的配置文件，将字符集的编码格式改为UTF-8</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">init_connect=&#x27;SET collation_connection=utf8_unicode_ci&#x27;</span><br><span class="line">init_connect=&#x27;SET NAMES utf8&#x27;</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_unicode_ci</span><br><span class="line">skip-character-set-client-handshake</span><br><span class="line">skip-name-resolve</span><br></pre></td></tr></table></figure>
+<p>进入mysql容器：<code>docker exec -it mysql /bin/bash</code></p>
+<p>查看当前启动的docker容器： <code>docker ps</code></p>
+<p>重新启动mysql容器：<code>docker restart mysql</code></p>
+<p>设置开机启动docker：<code>sudo systemctl enable docker</code></p>
+<p>设置mysql在docker启动后自启动：<code>sudo docker update mysql --restart=always</code></p>
+<h2 id="Docker安装Redis">Docker安装Redis</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1.预先创建文件</span></span><br><span class="line">mkdir -p /mydata/redis/conf</span><br><span class="line">touch /mydata/redis/conf/redis.conf</span><br><span class="line"></span><br><span class="line">docker run -p 6379:6379 --name redis \</span><br><span class="line">-v /mydata/redis/data:/data \</span><br><span class="line">-v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-d redis redis-server /etc/redis/redis.conf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-----------配置redis---------------------</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置持久化redis</span></span><br><span class="line">vi /mydata/redis/conf/redis.conf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">插入下面这行内容</span></span><br><span class="line">appendonly yes</span><br><span class="line"></span><br><span class="line">docker restart redis</span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure>
 
         </div>
         
 <blockquote class="copyright">
-    <p><strong>Link to this article : </strong><a class="permalink" href="http://yerenyong.com.cn/2022/03/29/test-article%20-%20%E5%89%AF%E6%9C%AC/">http://yerenyong.com.cn/2022/03/29/test-article - 副本/</a></p>
+    <p><strong>Link to this article : </strong><a class="permalink" href="http://yerenyong.com.cn/2022/01/19/Docker%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">http://yerenyong.com.cn/2022/01/19/Docker基础操作/</a></p>
     <p><strong>This article is available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> License</strong></p>
 </blockquote>
 
@@ -377,7 +252,7 @@
     <div class="toc-sidebar">
         <nav id="toc" class="article-toc">
             <h3 class="toc-title">Catalogue</h3>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">三个基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">常用指令</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%AE%89%E8%A3%85Mysql"><span class="toc-number">1.</span> <span class="toc-text">Docker安装Mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%AE%89%E8%A3%85Redis"><span class="toc-number">2.</span> <span class="toc-text">Docker安装Redis</span></a></li></ol>
         </nav>
     </div>
 </aside>
