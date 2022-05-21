@@ -11,9 +11,9 @@
 <meta property="og:site_name" content="叶仁勇的博客">
 <meta property="og:description" content="Maven基础 学习目标 目标1：能够说出maven的作用，POM的概念 目标2：完成maven的下载，安装和环境配置 目标3：能够说出仓库，坐标的概念，完成仓库的配置 目标4：完成手动搭建maven项目的案例 目标5：完成IDEA工具搭建maven项目的案例 目标6：能够说出依赖的传递方式和如何解决依赖传递冲突 目标7：能够说出maven的生命周期 1.Maven简介 1.1 Maven是什么">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yerenyong.com.cn/.cn//1.png">
-<meta property="og:image" content="http://yerenyong.com.cn/.cn//2.png">
-<meta property="og:image" content="http://yerenyong.com.cn/.cn//4.png">
+<meta property="og:image" content="https://yerenyong-blog.oss-cn-hangzhou.aliyuncs.com/1.png">
+<meta property="og:image" content="https://yerenyong-blog.oss-cn-hangzhou.aliyuncs.com/2.png">
+<meta property="og:image" content="https://yerenyong-blog.oss-cn-hangzhou.aliyuncs.com/4.png">
 <meta property="og:image" content="http://yerenyong.com.cn/.cn//5.png">
 <meta property="og:image" content="http://yerenyong.com.cn/.cn//6.png">
 <meta property="og:image" content="http://yerenyong.com.cn/.cn//7.png">
@@ -64,10 +64,10 @@
 <meta property="og:image" content="http://yerenyong.com.cn/.cn//53.png">
 <meta property="og:image" content="http://yerenyong.com.cn/.cn//54.png">
 <meta property="article:published_time" content="2022-05-20T01:55:17.741Z">
-<meta property="article:modified_time" content="2022-05-20T01:56:45.084Z">
+<meta property="article:modified_time" content="2022-05-21T06:32:30.844Z">
 <meta property="article:author" content="Rhory Ye">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yerenyong.com.cn/.cn//1.png">
+<meta name="twitter:image" content="https://yerenyong-blog.oss-cn-hangzhou.aliyuncs.com/1.png">
 
     
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
@@ -268,7 +268,7 @@
 <h2 id="1-Maven简介">1.Maven简介</h2>
 <h3 id="1-1-Maven是什么">1.1 Maven是什么</h3>
 <p>在学习Maven之前，我们先来看一下我们现在做的项目都有哪些问题。假设你现在做了一个crm的系统，项目中肯定要用到一些jar包，比如说mybatis，log4j，JUnit等，除了这些之外，你有可能用到你的同事开发的其他的东西，比如说别人做了一个财务模块或做了一个结算的模块，你在这里边有可能要用到这些东西。</p>
-<p><img src="/.cn//1.png" alt></p>
+<p><img src="https://yerenyong-blog.oss-cn-hangzhou.aliyuncs.com/1.png" alt></p>
 <p>假如有一天你们的项目中mybatis进行了一个升级，但是它内部使用的JUnit没有升级，你升级以后的mybatis假如要用5.0的JUnit，而你项目中目前用的是4.0的，会不会冲突？必然会出问题！这个时候管理起来会比较麻烦，你需要各种调整。更有甚者，假如同事做的这些东西升级了但又没有通知你，这个时候，就会出现几种严重的问题：</p>
 <p>（1）jar包不统一，jar不兼容</p>
 <p>（2）工程升级维护过程操作繁琐</p>
@@ -276,7 +276,7 @@
 <p>那<strong>Maven是什么</strong>？</p>
 <p>​	<strong>Maven的本质是一个项目管理工具，将项目开发和管理过程抽象成一个项目对象模型（POM）</strong></p>
 <p>Maven是用Java语言编写的。他管理的东西统统以面向对象的形式进行设计，最终他把一个项目看成一个对象，而这个对象叫做POM(project  object model)，即项目对象模型</p>
-<p><img src="/.cn//2.png" alt></p>
+<p><img src="https://yerenyong-blog.oss-cn-hangzhou.aliyuncs.com/2.png" alt></p>
 <p>我们说一个项目就是一个对象，作为对象的行为、对象的属性都有哪些呢？</p>
 <p>Maven说我们需要编写一个pom.xml文件，Maven通过加载这个配置文件就可以知道我们项目的相关信息了！到这里我们知道了Maven离不开一个叫pom.xml的文件。因为这个文件代表就一个项目。</p>
 <blockquote>
@@ -292,7 +292,7 @@
 <p>（1）项目构建：提供标准的，跨平台的自动化构建项目的方式</p>
 <p>（2）依赖管理：方便快捷的管理项目依赖的资源（jar包），避免资源间的版本冲突等问题</p>
 <p>（3）统一开发结构：提供标准的，统一的项目开发结构，如下图所示：</p>
-<p><img src="/.cn//4.png" alt></p>
+<p><img src="https://yerenyong-blog.oss-cn-hangzhou.aliyuncs.com/4.png" alt></p>
 <p>各目录存放资源类型说明：</p>
 <p><strong>src/main/java</strong>：项目java源码</p>
 <p><strong>src/main/resources</strong>：项目的相关配置文件（比如mybatis配置，xml映射配置，自定义配置文件等）</p>
