@@ -11,63 +11,63 @@
 <meta property="og:site_name" content="叶仁勇的博客">
 <meta property="og:description" content="Maven基础 学习目标 目标1：能够说出maven的作用，POM的概念 目标2：完成maven的下载，安装和环境配置 目标3：能够说出仓库，坐标的概念，完成仓库的配置 目标4：完成手动搭建maven项目的案例 目标5：完成IDEA工具搭建maven项目的案例 目标6：能够说出依赖的传递方式和如何解决依赖传递冲突 目标7：能够说出maven的生命周期 1.Maven简介 1.1 Maven是什么">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/1.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/2.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/4.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/5.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/6.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/7.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/8.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/9.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/10.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/11.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/12.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/17.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/18.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/13.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/15.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/16.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/19.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/20.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/21.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/22.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/23.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/24.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/25.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/26.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/27.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/28.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/29.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/30.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/31.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/32.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/33.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/34.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/35.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/36.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/37.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/38.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/39.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/40.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/41.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/42.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/43.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/44.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/45.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/46.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/47.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/48.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/49.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/50.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/51.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/52.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/53.png">
-<meta property="og:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/54.png">
+<meta property="og:image" content="http://example.com/.com//1.png">
+<meta property="og:image" content="http://example.com/.com//2.png">
+<meta property="og:image" content="http://example.com/.com//4.png">
+<meta property="og:image" content="http://example.com/.com//5.png">
+<meta property="og:image" content="http://example.com/.com//6.png">
+<meta property="og:image" content="http://example.com/.com//7.png">
+<meta property="og:image" content="http://example.com/.com//8.png">
+<meta property="og:image" content="http://example.com/.com//9.png">
+<meta property="og:image" content="http://example.com/.com//10.png">
+<meta property="og:image" content="http://example.com/.com//11.png">
+<meta property="og:image" content="http://example.com/.com//12.png">
+<meta property="og:image" content="http://example.com/.com//17.png">
+<meta property="og:image" content="http://example.com/.com//18.png">
+<meta property="og:image" content="http://example.com/.com//13.png">
+<meta property="og:image" content="http://example.com/.com//15.png">
+<meta property="og:image" content="http://example.com/.com//16.png">
+<meta property="og:image" content="http://example.com/.com//19.png">
+<meta property="og:image" content="http://example.com/.com//20.png">
+<meta property="og:image" content="http://example.com/.com//21.png">
+<meta property="og:image" content="http://example.com/.com//22.png">
+<meta property="og:image" content="http://example.com/.com//23.png">
+<meta property="og:image" content="http://example.com/.com//24.png">
+<meta property="og:image" content="http://example.com/.com//25.png">
+<meta property="og:image" content="http://example.com/.com//26.png">
+<meta property="og:image" content="http://example.com/.com//27.png">
+<meta property="og:image" content="http://example.com/.com//28.png">
+<meta property="og:image" content="http://example.com/.com//29.png">
+<meta property="og:image" content="http://example.com/.com//30.png">
+<meta property="og:image" content="http://example.com/.com//31.png">
+<meta property="og:image" content="http://example.com/.com//32.png">
+<meta property="og:image" content="http://example.com/.com//33.png">
+<meta property="og:image" content="http://example.com/.com//34.png">
+<meta property="og:image" content="http://example.com/.com//35.png">
+<meta property="og:image" content="http://example.com/.com//36.png">
+<meta property="og:image" content="http://example.com/.com//37.png">
+<meta property="og:image" content="http://example.com/.com//38.png">
+<meta property="og:image" content="http://example.com/.com//39.png">
+<meta property="og:image" content="http://example.com/.com//40.png">
+<meta property="og:image" content="http://example.com/.com//41.png">
+<meta property="og:image" content="http://example.com/.com//42.png">
+<meta property="og:image" content="http://example.com/.com//43.png">
+<meta property="og:image" content="http://example.com/.com//44.png">
+<meta property="og:image" content="http://example.com/.com//45.png">
+<meta property="og:image" content="http://example.com/.com//46.png">
+<meta property="og:image" content="http://example.com/.com//47.png">
+<meta property="og:image" content="http://example.com/.com//48.png">
+<meta property="og:image" content="http://example.com/.com//49.png">
+<meta property="og:image" content="http://example.com/.com//50.png">
+<meta property="og:image" content="http://example.com/.com//51.png">
+<meta property="og:image" content="http://example.com/.com//52.png">
+<meta property="og:image" content="http://example.com/.com//53.png">
+<meta property="og:image" content="http://example.com/.com//54.png">
 <meta property="article:published_time" content="2022-05-20T01:55:17.741Z">
 <meta property="article:modified_time" content="2022-05-20T01:56:45.084Z">
 <meta property="article:author" content="Rhory Ye">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/05/20/Maven%E5%9F%BA%E7%A1%80/img/1.png">
+<meta name="twitter:image" content="http://example.com/.com//1.png">
 
     
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
@@ -268,7 +268,7 @@
 <h2 id="1-Maven简介">1.Maven简介</h2>
 <h3 id="1-1-Maven是什么">1.1 Maven是什么</h3>
 <p>在学习Maven之前，我们先来看一下我们现在做的项目都有哪些问题。假设你现在做了一个crm的系统，项目中肯定要用到一些jar包，比如说mybatis，log4j，JUnit等，除了这些之外，你有可能用到你的同事开发的其他的东西，比如说别人做了一个财务模块或做了一个结算的模块，你在这里边有可能要用到这些东西。</p>
-<p><img src="./img/1.png" alt=""></p>
+<p><img src="/.com//1.png" alt></p>
 <p>假如有一天你们的项目中mybatis进行了一个升级，但是它内部使用的JUnit没有升级，你升级以后的mybatis假如要用5.0的JUnit，而你项目中目前用的是4.0的，会不会冲突？必然会出问题！这个时候管理起来会比较麻烦，你需要各种调整。更有甚者，假如同事做的这些东西升级了但又没有通知你，这个时候，就会出现几种严重的问题：</p>
 <p>（1）jar包不统一，jar不兼容</p>
 <p>（2）工程升级维护过程操作繁琐</p>
@@ -276,7 +276,7 @@
 <p>那<strong>Maven是什么</strong>？</p>
 <p>​	<strong>Maven的本质是一个项目管理工具，将项目开发和管理过程抽象成一个项目对象模型（POM）</strong></p>
 <p>Maven是用Java语言编写的。他管理的东西统统以面向对象的形式进行设计，最终他把一个项目看成一个对象，而这个对象叫做POM(project  object model)，即项目对象模型</p>
-<p><img src="./img/2.png" alt=""></p>
+<p><img src="/.com//2.png" alt></p>
 <p>我们说一个项目就是一个对象，作为对象的行为、对象的属性都有哪些呢？</p>
 <p>Maven说我们需要编写一个pom.xml文件，Maven通过加载这个配置文件就可以知道我们项目的相关信息了！到这里我们知道了Maven离不开一个叫pom.xml的文件。因为这个文件代表就一个项目。</p>
 <blockquote>
@@ -292,7 +292,7 @@
 <p>（1）项目构建：提供标准的，跨平台的自动化构建项目的方式</p>
 <p>（2）依赖管理：方便快捷的管理项目依赖的资源（jar包），避免资源间的版本冲突等问题</p>
 <p>（3）统一开发结构：提供标准的，统一的项目开发结构，如下图所示：</p>
-<p><img src="./img/4.png" alt=""></p>
+<p><img src="/.com//4.png" alt></p>
 <p>各目录存放资源类型说明：</p>
 <p><strong>src/main/java</strong>：项目java源码</p>
 <p><strong>src/main/resources</strong>：项目的相关配置文件（比如mybatis配置，xml映射配置，自定义配置文件等）</p>
@@ -304,13 +304,13 @@
 <p>maven的官网：<a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org/</a></p>
 <h3 id="2-1-下载">2.1 下载</h3>
 <p>官方下载地址：<a target="_blank" rel="noopener" href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></p>
-<p><img src="./img/5.png" alt=""></p>
+<p><img src="/.com//5.png" alt></p>
 <p>在今日课程资料<code>安装程序</code>中给大家提供了已经下载好的包，我们可以直接使用</p>
 <h3 id="2-2-安装">2.2 安装</h3>
 <p>maven是一个绿色软件，解压即安装，非常容易，</p>
 <p>我们找到今日课程资料中的<code>安装程序</code>，将里面的<code>apache-maven-3.6.1-bin.zip</code>直接解压到D盘根目录下即可</p>
 <p>解压完成后我们可以查看一下maven自己的一个目录结构如下</p>
-<p><img src="./img/6.png" alt=""></p>
+<p><img src="/.com//6.png" alt></p>
 <p>各目录结构说明：</p>
 <p>bin：可执行程序目录，</p>
 <p>boot：maven自身的启动加载器</p>
@@ -320,16 +320,16 @@
 <p>maven的运行需要java的环境，需要我们配置<code>JAVA_HOME</code>环境变量，这个相信大家已经存在了</p>
 <p>下面在去配置<code>MAVEN_HOME</code>的环境变量</p>
 <p>1：<code>我的电脑</code>--------&gt;<code>属性</code>---------&gt;<code>高级系统设置</code>----------&gt;<code>新建系统变量MAVEN_HOME</code>，</p>
-<p><img src="./img/7.png" alt=""></p>
+<p><img src="/.com//7.png" alt></p>
 <p>系统变量值就是maven软件的根目录，我们刚刚已经将maven解压到D盘了，因此变量值就如图中所示</p>
 <p>2：环境变量配置好之后需要测试环境配置结果，我们需要在DOS命令窗口下输入以下命令查看输出</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure>
-<p><img src="./img/8.png" alt=""></p>
+<p><img src="/.com//8.png" alt></p>
 <p>如果能够看到输出的maven的版本信息代表配置成功</p>
 <h2 id="3-Maven基础概念">3.Maven基础概念</h2>
 <h3 id="3-1-仓库">3.1 仓库</h3>
 <p>仓库：用于存储资源，主要是各种jar包</p>
-<p><img src="./img/9.png" alt=""></p>
+<p><img src="/.com//9.png" alt></p>
 <p>关于仓库，我们前面讲到了有三种：本地仓库，私服，中央仓库，其中私服和中央仓库都属于远程仓库</p>
 <p><strong>中央仓库</strong>：maven团队自身维护的仓库，属于开源的</p>
 <p><strong>私服</strong>：各公司/部门等小范围内存储资源的仓库，私服也可以从中央仓库获取资源</p>
@@ -355,11 +355,11 @@
 <p>如果要查询maven某一个资源的坐标，我们通常可以去maven的仓库进行查询，</p>
 <p><a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com/</a>，在该网站中可直接搜索想要的资源，然后就能得到该资源的坐标</p>
 <p>输入资源名称进行检索</p>
-<p><img src="./img/10.png" alt=""></p>
+<p><img src="/.com//10.png" alt></p>
 <p>点击你想要的资源进行查看</p>
-<p><img src="./img/11.png" alt=""></p>
+<p><img src="/.com//11.png" alt></p>
 <p>选择版本查看坐标</p>
-<p><img src="./img/12.png" alt=""></p>
+<p><img src="/.com//12.png" alt></p>
 <p><strong>maven坐标的作用：</strong></p>
 <p>使用唯一标识，唯一性定义资源位置，通过该标识可以将资源的识别与下载工作交由机器完成。</p>
 <h3 id="3-3-仓库配置">3.3 仓库配置</h3>
@@ -374,15 +374,15 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">&lt;!-- localRepository</span></span><br><span class="line"><span class="comment">   | The path to the local repository maven will use to store artifacts.</span></span><br><span class="line"><span class="comment">   |</span></span><br><span class="line"><span class="comment">   | Default: $&#123;user.home&#125;/.m2/repository</span></span><br><span class="line"><span class="comment">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\maven-repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果是局部用户配置：在仓库的同级目录也可以包含一个<code>settings.xml</code>配置文件，在里面也可以进行指定</p>
 <p>注意：局部用户配置优先与全局配置（遇见相同配置项的时候）</p>
-<p><img src="./img/17.png" alt=""></p>
+<p><img src="/.com//17.png" alt></p>
 <p>另外大家需要注意：maven默认连接的远程仓库位置是：（即中央仓库）</p>
-<p><img src="./img/18.png" alt=""></p>
+<p><img src="/.com//18.png" alt></p>
 <p>此站点并不在国内，因此有时候下载速度非常慢，因此我们可以配置一个国内站点镜像，可用于加速下载资源</p>
 <p>我们在<code>conf/settings.xml</code>配置文件中找到<code>&lt;mirrors&gt;</code>标签，在这组标签下添加镜像的配置，如下</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="4-Maven项目搭建">4.Maven项目搭建</h2>
 <p>我们回顾一下maven规范的目录结构：</p>
-<p><img src="./img/13.png" alt=""></p>
+<p><img src="/.com//13.png" alt></p>
 <h3 id="4-1-手动搭建maven项目">4.1 手动搭建maven项目</h3>
 <p>我们先使用手动的方式来创建maven项目</p>
 <p>（1）在D盘下创建目录<code>mvnproject</code>并进入该目录，作为我们的操作目录</p>
@@ -406,73 +406,73 @@
 <p><code>mvn install</code>：安装到本地仓库</p>
 <p>下面我们来进行操作：</p>
 <p>（1）在项目<code>project-java</code>所在的DOS命令窗口下执行<code>mvn compile</code>进行源码编译，当然首次执行需要先下载相关插件</p>
-<p><img src="./img/15.png" alt=""></p>
+<p><img src="/.com//15.png" alt></p>
 <p>编辑结果如下：</p>
-<p><img src="./img/16.png" alt=""></p>
+<p><img src="/.com//16.png" alt></p>
 <p>编译完成后在项目<code>project-java</code>下多了一个目录<code>target</code>，在这个目录下就存放的是maven编译好的一些东西</p>
-<p><img src="./img/19.png" alt=""></p>
+<p><img src="/.com//19.png" alt></p>
 <p>我们可以进入到<code>target</code>目录查看</p>
-<p><img src="./img/20.png" alt=""></p>
+<p><img src="/.com//20.png" alt></p>
 <p>其中生成的<code>classes</code>目录就是编译好的字节码文件</p>
 <p>（2）当然如果我们想清理掉这些东西，我们只需执行<code>mvn clean</code>命令即可，清理掉后<code>target</code>目录也就消失了</p>
 <p>（3）如果我们要执行测试包中的测试程序，我们只需执行<code>mvn test</code>命令即可</p>
-<p><img src="./img/21.png" alt=""></p>
+<p><img src="/.com//21.png" alt></p>
 <p>此时在看<code>target</code>目录会多一些东西</p>
-<p><img src="./img/22.png" alt=""></p>
+<p><img src="/.com//22.png" alt></p>
 <p>其中产生的<code>test-classes</code>就是测试代码的字节码文件，<code>surefire-reports</code>是它产生的测试报告</p>
-<p><img src="./img/23.png" alt=""></p>
+<p><img src="/.com//23.png" alt></p>
 <p>（4）使用<code>mvn package</code>命令进行打包，如下</p>
-<p><img src="./img/24.png" alt=""></p>
+<p><img src="/.com//24.png" alt></p>
 <p>在生成的<code>target</code>目录中可以看到打包的结果</p>
-<p><img src="./img/25.png" alt=""></p>
+<p><img src="/.com//25.png" alt></p>
 <p>当然，如果仔细看DOS窗口输出的我们会发现，<code>mvn package</code>命令的时候maven会把前面两个命令<code>mvn compile,mvn test</code>都执行一遍</p>
 <p>（5）使用<code>mvn install</code>命令进行安装，将项目打好的包存入本地仓库</p>
-<p><img src="./img/26.png" alt=""></p>
+<p><img src="/.com//26.png" alt></p>
 <blockquote>
 <p>仔细查看输出会发现<code>mvn install</code>命令执行的时候也会将前面的命令都执行一遍</p>
 </blockquote>
 <p>此时我们可以去本地仓库中查找，如何查找？这个很重要</p>
 <p>maven是按照<code>groupId/artifactId/version</code>的结构在本地仓库进行存储</p>
-<p><img src="./img/27.png" alt=""></p>
+<p><img src="/.com//27.png" alt></p>
 <p>前面我们是通过手动的方式创建的maven项目，相对来说比较的麻烦，maven本身也是这样觉得的，因此maven本身就给我们提供了相关的插件来帮助我们快速构建项目，当然这是一些命令：</p>
-<p><img src="./img/28.png" alt=""></p>
+<p><img src="/.com//28.png" alt></p>
 <p>这些命令不用记，因为实际操作的时候也用不着，因为实际开发的时候我们基本都是用过一些IDE工具来进行项目开发，这些IDE工具基本都集成了Maven，我们操作起来非常简单。</p>
 <h3 id="4-2-IDEA工具搭建maven项目">4.2 IDEA工具搭建maven项目</h3>
 <p>前面学习的基本都是通过命令来构建和管理项目，但是这在实际开发过程中基本不常用，常用的是通过相关IDE工具来进行项目的构建和管理，因此我们使用IDEA工具进行maven项目的搭建</p>
 <p>需要注意的是：Maven和IDEA在版本上存在一些兼容性问题，因为要合理的选择Maven和IDEA的版本，本课程中提供安装maven-3.6.1版本是可用的</p>
 <h4 id="4-2-1-不使用原型创建项目">4.2.1 不使用原型创建项目</h4>
 <p>（1）在IDEA中配置Maven</p>
-<p><img src="./img/29.png" alt=""></p>
+<p><img src="/.com//29.png" alt></p>
 <p>（2）创建maven工程</p>
-<p><img src="./img/30.png" alt=""></p>
+<p><img src="/.com//30.png" alt></p>
 <p>（3）填写本项目的坐标</p>
-<p><img src="./img/31.png" alt=""></p>
+<p><img src="/.com//31.png" alt></p>
 <p>（4）查看各目录颜色标记是否正确</p>
-<p><img src="./img/32.png" alt=""></p>
+<p><img src="/.com//32.png" alt></p>
 <p>（5）IDEA右侧有一个maven管理界面，可点开查看</p>
-<p><img src="./img/33.png" alt=""></p>
+<p><img src="/.com//33.png" alt></p>
 <p>（6）在项目的pom.xml文件中添加项目资源依赖</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>（7）创建源代码：com.itheima.Demo</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by 传智播客*黑马程序员.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">say</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello &quot;</span>+name);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello &quot;</span>+name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>（8）创建测试代码：com.itheima.DemoTest</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Assert;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by 传智播客*黑马程序员.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DemoTest</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSay</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Demo</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Demo</span>();</span><br><span class="line">        <span class="type">String</span> <span class="variable">ret</span> <span class="operator">=</span> d.say(<span class="string">&quot;maven&quot;</span>);</span><br><span class="line">        Assert.assertEquals(<span class="string">&quot;hello maven&quot;</span>,ret);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="./img/34.png" alt=""></p>
+<p><img src="/.com//34.png" alt></p>
 <p>然后可以进行测试运行</p>
 <p>运行的时候可以编辑运行模板：</p>
-<p><img src="./img/35.png" alt=""></p>
+<p><img src="/.com//35.png" alt></p>
 <p>然后点击运行：</p>
-<p><img src="./img/36.png" alt=""></p>
+<p><img src="/.com//36.png" alt></p>
 <h4 id="4-2-2-使用原型创建项目">4.2.2 使用原型创建项目</h4>
 <ul>
 <li>首先我们来看普通的java工程如何创建：</li>
 </ul>
 <p>（1）创建maven项目的时候选择使用原型骨架</p>
-<p><img src="./img/37.png" alt=""></p>
+<p><img src="/.com//37.png" alt></p>
 <p>（2）创建完成后发现通过这种方式缺少一些目录，如下图</p>
-<p><img src="./img/38.png" alt=""></p>
+<p><img src="/.com//38.png" alt></p>
 <p><strong>我们需要手动去补全目录，并且要对补全的目录进行标记，切记</strong></p>
-<p><img src="./img/39.png" alt=""></p>
+<p><img src="/.com//39.png" alt></p>
 <ul>
 <li>然后我们在来看web工程如何创建：</li>
 </ul>
@@ -480,39 +480,39 @@
 <blockquote>
 <p>有很多的webapp原型骨架，选择哪个基本都差不多，包括前面创建普通项目也是一样，quickstart原型也有很多</p>
 </blockquote>
-<p><img src="./img/40.png" alt=""></p>
+<p><img src="/.com//40.png" alt></p>
 <p>（2）和前面创建普通项目一样，通过原型创建web项目得到的目录结构是不全的，因此需要我们自行补全，同时要标记正确，最终需要得到如下结构</p>
-<p><img src="./img/41.png" alt=""></p>
+<p><img src="/.com//41.png" alt></p>
 <p>（3）web工程创建好之后需要启动运行，需要使用一个tomcat插件来运行我们的项目，在<code>pom.xml</code>中添加插件的坐标即可，最终改好的<code>pom.xml</code>如下</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itheima<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>web01<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>web01 Maven Webapp<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.example.com<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>web01<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>（4）插件配置好后，在IDEA右侧<code>maven-project</code>操作面板上可以看到该插件，并且可以利用该插件启动项目</p>
-<p><img src="./img/42.png" alt=""></p>
+<p><img src="/.com//42.png" alt></p>
 <p>运行后该插件会给我们一个可运行地址：</p>
-<p><img src="./img/43.png" alt=""></p>
+<p><img src="/.com//43.png" alt></p>
 <p>如果我们想更换端口，只需要在<code>pom.xml</code>中配置该插件即可</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">port</span>&gt;</span>80<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>（5）同时为了运行方便我们也可以创建运行模板：</p>
-<p><img src="./img/44.png" alt=""></p>
+<p><img src="/.com//44.png" alt></p>
 <h2 id="5-Maven依赖管理">5.Maven依赖管理</h2>
 <h3 id="5-1-依赖配置与依赖传递">5.1 依赖配置与依赖传递</h3>
 <p>依赖是指在当前项目中运行所需的jar，依赖配置的格式如下图</p>
-<p><img src="./img/45.png" alt=""></p>
+<p><img src="/.com//45.png" alt></p>
 <p><strong>依赖传递：</strong></p>
 <p>依赖具有传递性，分两种</p>
 <p>（1）直接依赖：在当前项目中通过依赖配置建立的依赖关系</p>
 <p>（2）间接依赖：被依赖的资源如果依赖其他资源，则表明当前项目间接依赖其他资源</p>
 <p>注意：直接依赖和间接依赖其实也是一个相对关系</p>
-<p><img src="./img/46.png" alt=""></p>
+<p><img src="/.com//46.png" alt></p>
 <p><strong>依赖传递的冲突问题：</strong></p>
 <p>在依赖传递过程中产生了冲突，我们有三种优先法则</p>
 <p>（1）路径优先：当依赖中出现相同资源时，层级越深，优先级越低，反之则越高</p>
 <p>（2）声明优先：当资源在相同层级被依赖时，配置顺序靠前的覆盖靠后的</p>
 <p>（3）特殊优先：当同级配置了相同资源的不同版本时，后配置的覆盖先配置的</p>
-<p><img src="./img/47.png" alt=""></p>
+<p><img src="/.com//47.png" alt></p>
 <p><strong>可选依赖</strong>：</p>
-<p><img src="./img/48.png" alt=""></p>
+<p><img src="/.com//48.png" alt></p>
 <p><strong>排除依赖：</strong></p>
-<p><img src="./img/49.png" alt=""></p>
+<p><img src="/.com//49.png" alt></p>
 <h3 id="5-2-依赖范围">5.2 依赖范围</h3>
 <p>依赖的jar默认情况可以在任何地方可用，可以通过<code>scope</code>标签设定其作用范围</p>
 <p>这里的范围主要是指以下三种范围</p>
@@ -521,14 +521,14 @@
 <p>（3）是否参与打包（package指令范围内）</p>
 <p>此外：<code>scope</code>标签的取值有四种：<code>compile,test,provided,runtime</code></p>
 <p>这四种取值与范围的对应情况如下：</p>
-<p><img src="./img/50.png" alt=""></p>
+<p><img src="/.com//50.png" alt></p>
 <p><strong>依赖范围的传递性：</strong></p>
-<p><img src="./img/51.png" alt=""></p>
+<p><img src="/.com//51.png" alt></p>
 <h2 id="6-Maven生命周期与插件">6.Maven生命周期与插件</h2>
 <h3 id="6-1-生命周期">6.1 生命周期</h3>
 <p>maven的构建生命周期描述的是一次构建过程经历了多少个事件</p>
 <p>比如我们项目最常用的一套流程如下：</p>
-<p><img src="./img/52.png" alt=""></p>
+<p><img src="/.com//52.png" alt></p>
 <p>当然maven的生命周期不止这一套，总共分为3套，每套里面包含的事件如下</p>
 <p>（1）clean：清理工作</p>
 <blockquote>
@@ -539,7 +539,7 @@
 <p>（2）default：核心工作，例如编译，测试，打包，部署等</p>
 <blockquote>
 <p>这里面的事件非常的多，如下图</p>
-<p><img src="./img/53.png" alt=""></p>
+<p><img src="/.com//53.png" alt></p>
 </blockquote>
 <p><strong>对于default生命周期，每个事件在执行之前都会将之前的所有事件依次执行一遍</strong></p>
 <p>（3）site：产生报告，发布站点等</p>
@@ -558,7 +558,7 @@
 <li>插件还可以完成一些自定义功能</li>
 </ul>
 <p>插件的配置方式如下：</p>
-<p><img src="./img/54.png" alt=""></p>
+<p><img src="/.com//54.png" alt></p>
 <p>在maven官网中有对插件的介绍：</p>
 <p><a target="_blank" rel="noopener" href="http://maven.apache.org/plugins/index.html">http://maven.apache.org/plugins/index.html</a></p>
 
