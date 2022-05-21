@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html  lang="en" >
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <title>HTML基础 | 叶仁勇的博客</title>
+    <meta name="description" content="1. 什么是HTML HTML是超文本标记语言(Hype Text Markup Language)，HTML是用标签来描述网页的语言，它包含了标签和（标签中的）文本内容。 HTML也可以称为是一个web页面，通过浏览器可以访问web页面。 2. HTML的构成  HTML是由各种标签构成的，要学会HTML，要先掌握各种标签的语法。  2.1 主体标签   声明使用的规范：&lt;!DOCTYPE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML基础">
+<meta property="og:url" content="http://yerenyong.com.cn/2022/05/21/HTML%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="叶仁勇的博客">
+<meta property="og:description" content="1. 什么是HTML HTML是超文本标记语言(Hype Text Markup Language)，HTML是用标签来描述网页的语言，它包含了标签和（标签中的）文本内容。 HTML也可以称为是一个web页面，通过浏览器可以访问web页面。 2. HTML的构成  HTML是由各种标签构成的，要学会HTML，要先掌握各种标签的语法。  2.1 主体标签   声明使用的规范：&lt;!DOCTYPE">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yerenyong.com.cn/.cn//image-20210126165909493.png">
+<meta property="og:image" content="http://yerenyong.com.cn/.cn//image-20210126165614883.png">
+<meta property="og:image" content="http://yerenyong.com.cn/.cn//image-20210126213011681.png">
+<meta property="article:published_time" content="2022-05-21T14:15:28.000Z">
+<meta property="article:modified_time" content="2022-05-21T14:16:31.709Z">
+<meta property="article:author" content="Rhory Ye">
+<meta property="article:tag" content="前端三件套">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yerenyong.com.cn/.cn//image-20210126165909493.png">
+
+    
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    
+<link rel="stylesheet" href="/css/common.min.css">
+
+
+
+    
+    
+    
+    
+        <link href="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/css/lightgallery.min.css" rel="stylesheet">
+    
+    
+    
+<link rel="stylesheet" href="/css/iconfont.min.css">
+
+    
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+    <body>
+        <header class="header header-fixture">
+    <div class="profile-search-wrap flex sm:block">
+        
+        
+        <div class="profile sm:text-center md:px-1 lg:px-3 sm:pb-4 sm:pt-6">
+            <a id="avatar" role="link" href="https://github.com/Rhory-Ye" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_blank" rel="noopener" rel="noreferrer" >
+                <img src="/images/avatar.jpg" class="rounded-full" alt="avatar">
+            </a>
+            <h2 id="name" class="hidden lg:block">叶仁勇</h2>
+            <h3 id="title" class="hidden lg:block"></h3>
+            
+            <small id="location" class="hidden lg:block">
+                <i class="iconfont icon-map-icon"></i>
+                Putian , Fujian
+            </small>
+            
+        </div>
+        
+        
+<div class="search flex-1 flex lg:inline-block sm:hidden lg:px-4 lg:mt-2 lg:mb-4 lg:w-full">
+    <form id="search-form" class="my-auto flex-1 lg:border lg:border-solid lg:border-gray-200">
+        <div class="input-group table bg-gray-100 lg:bg-white w-full">
+            <input id="search-input" type="text" placeholder="Search" class="inline-block w-full bg-gray-100 lg:bg-white p-1">
+            <span class="table-cell">
+                <button name="search tigger button" disabled>
+                    <i class="iconfont icon-search m-2"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+        
+<div id="content-json" data-placeholder="Search" class="invisible hidden">/content.json</div>
+<script id="search-teamplate" type="text/html" data-path="/content.json">
+    <div>
+        <div class="search-header bg-gray-400">
+            <input id="actual-search-input" model="keyword" ref="input" class="inline-block w-full h-10 px-2 py-1" placeholder="Search" type="text">
+        </div>
+        <div class="search-result bg-gray-200">
+            {{#each searchPosts}}
+            <a href="/{{ path }}" class="result-item block px-2 pb-3 mb-1 pt-1 hover:bg-indigo-100">
+                <i class="iconfont icon-file"></i>
+                <h1 class="result-title inline font-medium text-lg">{{ title }}</h1>
+                <p class="result-content text-gray-600 text-sm">{{{ text }}}</p>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</script>
+
+</div>
+
+
+        <button name="menu toogle button" id="menu-toggle-btn" class="block sm:hidden p-3" role="button" aria-expanded="false">
+            <i class="iconfont icon-hamburger"></i>
+        </button>
+    </div>
+    <nav id="menu-nav" class="hidden sm:flex flex-col">
+        
+        
+            <div class="menu-item menu-home" role="menuitem">
+                <a href="/.">
+                    <i class="iconfont icon-home" aria-hidden="true"></i>
+                    <span class="menu-title">Home</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-archives" role="menuitem">
+                <a href="/archives">
+                    <i class="iconfont icon-archive" aria-hidden="true"></i>
+                    <span class="menu-title">Archives</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-categories" role="menuitem">
+                <a href="/categories">
+                    <i class="iconfont icon-folder" aria-hidden="true"></i>
+                    <span class="menu-title">Categories</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-tags" role="menuitem">
+                <a href="/tags">
+                    <i class="iconfont icon-tag" aria-hidden="true"></i>
+                    <span class="menu-title">Tags</span>
+                </a>
+            </div>
+        
+        
+<div class="social-links flex sm:flex-col lg:hidden mt-5">
+    
+        <span class="social-item text-center">
+            <a target="_blank" rel="noopener" href="https://github.com/Rhory-Ye">
+                <i class="iconfont social-icon icon-github"></i>
+                <span class="menu-title hidden lg:inline">menu.github</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/null">
+                <i class="iconfont social-icon icon-telegram"></i>
+                <span class="menu-title hidden lg:inline">menu.telegram</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/null">
+                <i class="iconfont social-icon icon-twitter"></i>
+                <span class="menu-title hidden lg:inline">menu.twitter</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/atom.xml">
+                <i class="iconfont social-icon icon-rss"></i>
+                <span class="menu-title hidden lg:inline">menu.rss</span>
+            </a>
+        </span>
+    
+</div>
+
+
+    </nav>
+</header>
+
+        <section class="main-section">
+            
+    <main class="flex-1 px-4 py-14 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    
+
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            
+    
+        <h1 class="article-title text-lg" itemprop="name">
+            HTML基础
+        </h1>
+    
+
+
+
+            <p class="article-meta mb-3 text-xs">
+                <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2022/05/21/HTML%E5%9F%BA%E7%A1%80/" class="article-date">
+	  <time datetime="2022-05-21T14:15:28.000Z" itemprop="datePublished">May 21</time>
+	</a>
+</span>
+
+                
+
+                
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/%E5%89%8D%E7%AB%AF%E4%B8%89%E4%BB%B6%E5%A5%97/" rel="tag">前端三件套</a>
+  </span>
+
+
+                <span class="_partial/post-comment"><i class="icon icon-comment"></i>
+                    <a href="/2022/05/21/HTML%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">
+                        Comments
+                    </a>
+                </span>
+                
+
+            </p>
+        </header>
+        <div class="marked-body article-body">
+            <h1 id="1-什么是HTML">1. 什么是HTML</h1>
+<p>HTML是超文本标记语言(Hype Text Markup Language)，HTML是用标签来描述网页的语言，它包含了标签和（标签中的）文本内容。</p>
+<p>HTML也可以称为是一个web页面，通过浏览器可以访问web页面。</p>
+<h1 id="2-HTML的构成">2. HTML的构成</h1>
+<blockquote>
+<p>HTML是由各种标签构成的，要学会HTML，要先掌握各种标签的语法。</p>
+</blockquote>
+<h2 id="2-1-主体标签">2.1 主体标签</h2>
+<ul>
+<li>
+<p>声明使用的规范：<code>&lt;!DOCTYPE html&gt;</code></p>
+</li>
+<li>
+<p>一个html的实例化：<code>&lt;html&gt;&lt;/html&gt;</code></p>
+</li>
+<li>
+<p>网页头部：<code>&lt;head&gt;&lt;/head&gt;</code></p>
+<ul>
+<li>当前文件使用浏览器打开的文字编码方式：<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></li>
+<li>描述性标签，用于描述网站的信息，一般用来做SEO：<code>&lt;meta ****=&quot;****&quot;&gt;</code></li>
+<li>网页标题（浏览器中标签的命名）：<code>&lt;title&gt;&lt;/title&gt;</code></li>
+</ul>
+</li>
+<li>
+<p>网页主体的实例化：<code>&lt;body&gt;&lt;/body&gt;</code></p>
+</li>
+</ul>
+<h2 id="2-2-基本标签">2.2 基本标签</h2>
+<ul>
+<li>标题标签：<code>&lt;h1&gt;&lt;/h1&gt;</code></li>
+<li>段落标签：<code>&lt;p&gt;&lt;/p&gt;</code></li>
+<li>换行标签：<code>&lt;br/&gt;</code></li>
+<li>水平线标签：<code>&lt;hr/&gt;</code></li>
+<li>字体样式标签
+<ul>
+<li>粗体：<code>&lt;strong&gt;&lt;/strong&gt;</code>或<code>&lt;b&gt;&lt;/b&gt;</code>(bold)</li>
+<li>斜体：<code>&lt;em&gt;&lt;/em&gt;</code>(emphasize)或<code>&lt;i&gt;&lt;/i&gt;</code>(italic)</li>
+</ul>
+</li>
+<li>注释和特殊符号
+<ul>
+<li>注释：<code>&lt;!-- --&gt;</code></li>
+<li>特殊符号：以<code>&amp;</code>开头，以<code>;</code>结尾；如空格<code>&amp;nbsp;</code>(no breaking space)</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-图像标签">2.3 图像标签</h2>
+<blockquote>
+<p>只举例了几个简单的属性设置</p>
+</blockquote>
+<p>常见的图像格式：JPG、GIF、PNG、BMP</p>
+<p>例如：<code>&lt;img src=&quot;img/猛男派大星.png&quot; width=&quot;150%&quot; title=&quot;我是派大星&quot; alt=&quot;我丢了!&quot;/&gt;</code>中</p>
+<ul>
+<li><code>src</code>是图像的地址，一般使用相对路径（相对路径中<code>../</code>代表上一级目录），</li>
+<li><code>width</code>图像宽度</li>
+<li><code>height</code>图像高度</li>
+<li><code>title</code>是鼠标悬停提示文字</li>
+<li><code>alt</code>是图像丢失时的替代文字</li>
+</ul>
+<h2 id="2-4-链接标签">2.4 链接标签</h2>
+<ul>
+<li>
+<p>页面间链接：<code>&lt;a href=&quot;网页地址&quot; target=&quot;_blank&quot;&gt;链接文本描述&lt;/a&gt;</code></p>
+<ul>
+<li>href(hot references):必填，否则链接标签无意义</li>
+<li>target:表示窗口打开的位置（如<code>_blank</code>表示在新的标签页中打开，默认会在原标签页中打开<code>_self</code>）</li>
+<li>连接描述中可以是简单的文本描述，也可以嵌套一个图像标签，使用图片跳转链接</li>
+</ul>
+</li>
+<li>
+<p>锚链接</p>
+<ul>
+<li>锚标签需要有一个锚点提供跳转目的地址，使用name进行标记：<code>&lt;a name=&quot;锚点标识名&quot;&gt;锚点文本描述&lt;/a&gt;</code></li>
+<li>跳转方式1:<code>&lt;a href=&quot;#锚点标识名&quot;&gt;锚点跳转文本描述&lt;/a&gt;</code>，重点<code>#锚点名</code></li>
+<li>跳转方式2：<code>&lt;a href=&quot;网页地址#锚点标识名&quot;&gt;锚点跳转文本描述&lt;/a&gt;</code>，该方式能够跳转到指定网页的指定位置</li>
+</ul>
+</li>
+<li>
+<p>功能性链接</p>
+<ul>
+<li>邮件链接<code>&lt;a href=&quot;mailto:邮箱地址&quot;&gt;链接文本描述&lt;/a&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p>在腾讯的一个qq推广工具中有链接标签的一种具体应用：</p>
+<p><img src="/.cn//image-20210126165909493.png" alt="image-20210126165909493"></p>
+<h2 id="2-5-行内元素和块元素">2.5 行内元素和块元素</h2>
+<ul>
+<li>块元素
+<ul>
+<li>无论内容多少，该元素独占一行</li>
+<li>比如p、h1~h6等标签</li>
+</ul>
+</li>
+<li>行内元素
+<ul>
+<li>内容撑开宽度，左右都是行内元素的可以排在一行</li>
+<li>比如常见的字体样式标签</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-6-列表">2.6 列表</h2>
+<ul>
+<li>有序列表</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>无序列表
+<ul>
+<li>一般用在导航、侧边栏</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>自定义列表
+<ul>
+<li>一般用在网站底部</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span><span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span><span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-7-表格">2.7 表格</h2>
+<blockquote>
+<p>为什么使用表格：表格简单通用，结构稳定</p>
+</blockquote>
+<p>表格标签：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1px&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">&quot;n&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">&quot;n&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>border</code>设置表格边框</li>
+<li><code>&lt;tr&gt;&lt;/tr&gt;</code>每一个标签代表一行</li>
+<li><code>&lt;td&gt;&lt;/td&gt;</code>每一个标签代表一个列值</li>
+<li><code>colspan=&quot;n&quot;</code>表示将n个列值合并为一个列值</li>
+<li><code>rowspan=&quot;n&quot;</code>表示将n行个列值合并为一个列值</li>
+<li><code>align=&quot;value&quot;</code>设置列值的对齐方式（left、center、right）</li>
+</ul>
+<h2 id="2-8-音频和视频">2.8 音频和视频</h2>
+<ul>
+<li>
+<p>视频标签：<code>&lt;video src=&quot;资源路径&quot; controls autoplay muted&gt;&lt;/video&gt;</code></p>
+<ul>
+<li>
+<p><code>controls</code>代表显示视频控制条，若没有controls，视频不会显示</p>
+</li>
+<li>
+<p><code>autoplay</code>控制视频是否在网页打开时自动播放</p>
+</li>
+<li>
+<p><code>muted</code>是静音播放</p>
+</li>
+</ul>
+</li>
+<li>
+<p>音频标签：<code>&lt;audio src=&quot;资源路径&quot; controls autoplay&gt;&lt;/audio&gt;</code>，同视频标签</p>
+<ul>
+<li><code>controls</code>代表显示音频控制条，若没有controls，音频不会显示</li>
+<li><code>autoplay</code>控制音频是否在网页打开时自动播放</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-9-iframe内联框架">2.9 iframe内联框架</h2>
+<p>内联框架的作用：在一个网页中嵌入其他网页</p>
+<p>iframe标签：<code>&lt;iframe src=&quot;path&quot; name=&quot;iframe标识名&quot;&gt;&lt;/iframe&gt;</code></p>
+<p>这个在B站的视频分享中有具体的应用：</p>
+<p><img src="/.cn//image-20210126165614883.png" alt="image-20210126165614883"></p>
+<h2 id="2-10-表单">2.10 表单</h2>
+<p>表单标签：<code>&lt;form method=&quot;post&quot; action=&quot;result html&quot;&gt;&lt;/form&gt;</code></p>
+<ul>
+<li><code>action</code>：表单提交的位置，是一个网站或者地址</li>
+<li><code>method</code>：post、get提交方式
+<ul>
+<li>get方式：可以在URL中看到提交的信息，高效但不安全</li>
+<li>post方式：相对安全，且可以传输大文件（下图为使用post方式如何查看到提交的表单内容，但此步骤还能再经过加密处理）</li>
+</ul>
+</li>
+</ul>
+<p><img src="/.cn//image-20210126213011681.png" alt="image-20210126213011681"></p>
+<ul>
+<li><code>input</code>标签（以下都为input属性）
+<ul>
+<li><code>type</code>
+<ul>
+<li><code>radio</code>：单选框（注意：单选框需要和name一起用，否则在需求只能选择一个选项的情况下，会出现多个单选框都能选中；最好每个input标签都有name值进行分组），可通过<code>checked</code>属性设置默认值</li>
+<li><code>checkbox</code>：多选框，可通过<code>checked</code>属性设置默认值</li>
+<li><code>button</code>：按钮</li>
+<li><code>image</code>：图片按钮，需要通过<code>src</code>属性设置图片路径</li>
+<li><code>reset</code>：重置，清空表单</li>
+<li><code>file</code>：文件域，可选择文件进行提交</li>
+<li><code>email</code>：邮箱验证，验证是否是一个邮箱，但只是初级验证，后期验证可以使用javascript实现。</li>
+<li><code>number</code>：数字验证，通过<code>max</code>和<code>min</code>设置数字上下限，还有步长<code>step</code></li>
+<li><code>range</code>：滑块</li>
+<li><code>search</code>：搜索</li>
+</ul>
+</li>
+<li><code>value</code>：初始值</li>
+<li><code>maxlength</code>：最大可输入字符数</li>
+<li><code>name</code>：表示组</li>
+<li><code>readonly</code>：只读</li>
+<li><code>disabled</code>：禁用</li>
+<li><code>hidden</code>：隐藏 域</li>
+</ul>
+</li>
+<li><code>select</code>标签：下拉框，可通过<code>selected</code>属性设置默认选项</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;列表名称&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;选项的值&quot;</span>&gt;</span>选项1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;选项的值&quot;</span> <span class="attr">selected</span>&gt;</span>选项2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;选项的值&quot;</span>&gt;</span>选项3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>文本域：<code>&lt;textarea name=&quot;ttt&quot; cols=&quot;30&quot; rows=&quot;50&quot;&gt;文本内容&lt;/textarea&gt;</code></li>
+<li><code>&lt;label for=&quot;目的标签id&quot;&gt;&lt;/label&gt;</code>，通过label标签可以增强鼠标的可用性，定义for属性可以让鼠标跳转到对应id的标签。</li>
+</ul>
+<h2 id="2-11-表单的初级验证">2.11 表单的初级验证</h2>
+<blockquote>
+<p>为什么要进行表单验证？减少无用数据、非法数据的提交，减轻服务器压力，提高数据的安全性</p>
+</blockquote>
+<p>在2.10中提到的表单属性中，还有以下三种表单初级验证的方式：</p>
+<ul>
+<li>属性<code>placeholder=&quot;提示信息&quot;</code>：提示输入信息</li>
+<li>属性<code>required</code>：非空判断，有该属性的标签不能为空，否则无法提交</li>
+<li>属性<code>pattern</code>：正则表达式验证</li>
+</ul>
+
+        </div>
+        
+<blockquote class="copyright">
+    <p><strong>Link to this article : </strong><a class="permalink" href="http://yerenyong.com.cn/2022/05/21/HTML%E5%9F%BA%E7%A1%80/">http://yerenyong.com.cn/2022/05/21/HTML基础/</a></p>
+    <p><strong>This article is available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> License</strong></p>
+</blockquote>
+
+
+    </article>
+    
+    <section id="comments">
+        
+    </section>
+
+
+    
+
+</main>
+
+
+<aside style="" id="sidebar" class="aside aside-fixture">
+    <div class="toc-sidebar">
+        <nav id="toc" class="article-toc">
+            <h3 class="toc-title">Catalogue</h3>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFHTML"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是HTML</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-HTML%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text">2. HTML的构成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%B8%BB%E4%BD%93%E6%A0%87%E7%AD%BE"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 主体标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 基本标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%9B%BE%E5%83%8F%E6%A0%87%E7%AD%BE"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 图像标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 链接标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C%E5%9D%97%E5%85%83%E7%B4%A0"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 行内元素和块元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E5%88%97%E8%A1%A8"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E8%A1%A8%E6%A0%BC"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E9%9F%B3%E9%A2%91%E5%92%8C%E8%A7%86%E9%A2%91"><span class="toc-number">2.8.</span> <span class="toc-text">2.8 音频和视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-iframe%E5%86%85%E8%81%94%E6%A1%86%E6%9E%B6"><span class="toc-number">2.9.</span> <span class="toc-text">2.9 iframe内联框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E8%A1%A8%E5%8D%95"><span class="toc-number">2.10.</span> <span class="toc-text">2.10 表单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-11-%E8%A1%A8%E5%8D%95%E7%9A%84%E5%88%9D%E7%BA%A7%E9%AA%8C%E8%AF%81"><span class="toc-number">2.11.</span> <span class="toc-text">2.11 表单的初级验证</span></a></li></ol></li></ol>
+        </nav>
+    </div>
+</aside>
+
+
+
+
+
+        </section>
+        <footer class="hidden lg:block fixed bottom-0 left-0 sm:w-1/12 lg:w-1/6 bg-gray-100 z-40">
+    
+    <div class="footer-social-links">
+        
+            <a target="_blank" rel="noopener" href="https://github.com/Rhory-Ye">
+                <i class="iconfont icon-github"></i>
+            </a>
+        
+            <a href="/null">
+                <i class="iconfont icon-telegram"></i>
+            </a>
+        
+            <a href="/null">
+                <i class="iconfont icon-twitter"></i>
+            </a>
+        
+            <a href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
+            </a>
+        
+    </div>
+    
+    
+</footer>
+
+        <div id="mask" class="hidden mask fixed inset-0 bg-gray-900 opacity-75 z-40"></div>
+        <div id="search-view-container" class="hidden shadow-xl"></div>
+        
+<script src="/js/dom-event.min.js"></script>
+
+
+
+<script src="/js/local-search.min.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/js/lightgallery.min.js"></script>
+    
+<script src="/js/light-gallery.min.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
